@@ -12,3 +12,4 @@ C:\Users\Administrator\Desktop\Sudoku_-game\ConsoleApp1\obj\Debug\net6.0\refint\
 C:\Users\Administrator\Desktop\Sudoku_-game\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.pdb
 C:\Users\Administrator\Desktop\Sudoku_-game\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.genruntimeconfig.cache
 C:\Users\Administrator\Desktop\Sudoku_-game\ConsoleApp1\obj\Debug\net6.0\ref\ConsoleApp1.dll
+C:\Users\Administrator\Desktop\Sudoku_-game\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.sourcelink.json
