@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.ExceptionServices;
+using System.Runtime.Versioning;
 
 namespace Test
 {
@@ -138,12 +140,535 @@ namespace Test
             #endregion
             #endregion
 
-            #region
+            #region 3x9 의 스도쿠 만들기
+            //Random random = new Random();
+            //int[] array = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //int[,] array2 = new int[3, 3];
+            //int[,] array3 = new int[3, 3];
+            //int[,] array4 = new int[3, 3];
+            //int[,] array5 = new int[9, 9];
+            //int[] arr1 = new int[3];
+            //int[] arr2 = new int[3];
+            //int[] arr3 = new int[3];
 
-            #region 9x9 의 스도쿠 만들기
-   
-            #endregion 
 
+            //for (int i = array.Length - 1; i > 0; i--)
+            //{
+            //    int j = random.Next(0, i + 1);
+
+            //    int temp = array[i];
+            //    array[i] = array[j];
+            //    array[j] = temp;
+            //}
+
+
+            //int a = 0;
+            //for (int i = 0; i < array2.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array2.GetLength(1); j++)
+            //    {
+            //        array2[i, j] = array[a];
+            //        a++;
+            //    }
+            //}
+
+            //for (int i = 0; i < array2.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array2.GetLength(1); j++)
+            //    {
+            //        Console.Write(array2[i, j]);
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+            //int count = 3;
+            //for (int i = 0; i < count; i++)
+            //{   
+            //    arr1[i] = array[i];
+            //}
+
+            //int b = 3;
+            //for (int i = 0; i < count; i++)
+            //{
+
+            //    arr2[i] = array[b];
+            //    b++;
+            //}
+
+            //int c = 5;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    arr3[i] = array[c];
+            //    c++;
+            //}
+
+
+            //for (int i = 0; i < array3.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array3.GetLength(1); j++)
+            //    {
+            //       if(i == 0)
+            //        {
+            //            array3[i,j] = arr3[j];
+            //        }
+            //        else if(i == 1)
+            //        {
+            //            array3[i, j] = arr1[j];
+            //        }
+            //        else if (i == 2)
+            //        {
+            //            array3[i, j] = arr2[j];
+            //        }
+
+            //    }
+            //}
+
+            //for (int i = 0; i < array4.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array4.GetLength(1); j++)
+            //    {
+            //        if (i == 0)
+            //        {
+            //            array4[i, j] = arr2[j];
+            //        }
+            //        else if (i == 1)
+            //        {
+            //            array4[i, j] = arr3[j];
+            //        }
+            //        else if (i == 2)
+            //        {
+            //            array4[i, j] = arr1[j];
+            //        }
+
+            //    }
+            //}
+
+            //for (int i = 0; i < array3.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array3.GetLength(1); j++)
+            //    {
+            //        Console.Write(array3[i, j]);
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+            //for (int i = 0; i < array4.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array4.GetLength(1); j++)
+            //    {
+            //        Console.Write(array4[i, j]);
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+            //int v = 0;
+            //for (int i = 0; i < array5.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array5.GetLength(1); j++)
+            //    {
+            //        if(j<4)
+            //        {
+            //            array5[i, j] = array2[i,v];
+            //            v++;
+            //        }
+            //        else if( j<6)
+            //        {
+            //            array5[i, j] = array3[i, v];
+            //            v++;
+            //        }
+            //        else if (j <=8)
+            //        {
+            //            array5[i, j] = array4[i, v];
+            //            v++;
+            //        }
+            //    }
+            //}
+
+            //for (int i = 0; i < array5.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array5.GetLength(1); j++)
+            //    {
+            //        Console.Write(array5[i, j]);
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+
+            #region 2차원배열 합치기
+            // 이건 수직(열)으로 합치는거군아 
+            //int[,] array1 = { { 1, 2, 3 }, { 4, 5, 6 } };
+            //int[,] array2 = { { 7, 8, 9 }, { 10, 11, 12 } };
+
+            //// array1과 array2의 행과 열 길이
+            //int rows1 = array1.GetLength(0);
+            //int cols1 = array1.GetLength(1);
+            //int rows2 = array2.GetLength(0);
+            //int cols2 = array2.GetLength(1);
+
+            //// 새로운 배열 생성
+            //int[,] combinedArray = new int[rows1 + rows2, cols1];
+
+            //// array1의 요소 복사
+            //for (int i = 0; i < rows1; i++)
+            //{
+            //    for (int j = 0; j < cols1; j++)
+            //    {
+            //        combinedArray[i, j] = array1[i, j];
+            //    }
+            //}
+
+            //// array2의 요소 복사
+            //for (int i = 0; i < rows2; i++)
+            //{
+            //    for (int j = 0; j < cols2; j++)
+            //    {
+            //        combinedArray[i + rows1, j] = array2[i, j];
+            //    }
+            //}
+
+            //// 결과 출력
+            //Console.WriteLine("Combined Array:");
+            //for (int i = 0; i < combinedArray.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < combinedArray.GetLength(1); j++)
+            //    {
+            //        Console.Write(combinedArray[i, j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            //열로 합치기
+            //int[,] array1 = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            //int[,] array2 = { { 7, 8 }, { 9, 10 }, { 11, 12 } };
+
+            //int rows1 = array1.GetLength(0);
+            //int cols1 = array1.GetLength(1);
+            //int rows2 = array2.GetLength(0);
+            //int cols2 = array2.GetLength(1);
+
+            //// 새로운 배열 생성
+            //int[,] combinedArray = new int[rows1, cols1 + cols2];
+
+            //// array1 복사
+            //for (int i = 0; i < rows1; i++)
+            //{
+            //    for (int j = 0; j < cols1; j++)
+            //    {
+            //        combinedArray[i, j] = array1[i, j];
+            //    }
+            //}
+
+            //// array2 복사
+            //for (int i = 0; i < rows2; i++)
+            //{
+            //    for (int j = 0; j < cols2; j++)
+            //    {
+            //        combinedArray[i, j + cols1] = array2[i, j];
+            //    }
+            //}
+
+            //// 결과 출력
+            //Console.WriteLine("Combined Array:");
+            //for (int i = 0; i < combinedArray.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < combinedArray.GetLength(1); j++)
+            //    {
+            //        Console.Write(combinedArray[i, j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            #endregion
+
+            #region 열로 합치기
+
+            //Random random = new Random();
+            //int[] array = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //int[,] array2 = new int[3, 3];
+            //int[,] array3 = new int[3, 3];
+            //int[,] array4 = new int[3, 3];
+            //int[,] array5 = new int[9, 9];
+            //int[] arr1 = new int[3];
+            //int[] arr2 = new int[3];
+            //int[] arr3 = new int[3];
+
+
+            //for (int i = array.Length - 1; i > 0; i--)
+            //{
+            //    int j = random.Next(0, i + 1);
+
+            //    int temp = array[i];
+            //    array[i] = array[j];
+            //    array[j] = temp;
+            //}
+
+
+            //int a = 0;
+            //for (int i = 0; i < array2.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array2.GetLength(1); j++)
+            //    {
+            //        array2[i, j] = array[a];
+            //        a++;
+            //    }
+            //}
+
+            //int count = 3;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    arr1[i] = array[i];
+            //}
+
+            //int b = 3;
+            //for (int i = 0; i < count; i++)
+            //{
+
+            //    arr2[i] = array[b];
+            //    b++;
+            //}
+
+            //int c = 5;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    arr3[i] = array[c];
+            //    c++;
+            //}
+
+
+            //for (int i = 0; i < array3.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array3.GetLength(1); j++)
+            //    {
+            //        if (i == 0)
+            //        {
+            //            array3[i, j] = arr3[j];
+            //        }
+            //        else if (i == 1)
+            //        {
+            //            array3[i, j] = arr1[j];
+            //        }
+            //        else if (i == 2)
+            //        {
+            //            array3[i, j] = arr2[j];
+            //        }
+
+            //    }
+            //}
+
+            //for (int i = 0; i < array4.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array4.GetLength(1); j++)
+            //    {
+            //        if (i == 0)
+            //        {
+            //            array4[i, j] = arr2[j];
+            //        }
+            //        else if (i == 1)
+            //        {
+            //            array4[i, j] = arr3[j];
+            //        }
+            //        else if (i == 2)
+            //        {
+            //            array4[i, j] = arr1[j];
+            //        }
+
+            //    }
+            //}
+
+            //int rows1 = array2.GetLength(0);
+            //int cols1 = array2.GetLength(1);
+            //int rows2 = array3.GetLength(0);
+            //int cols2 = array3.GetLength(1);
+            //int rows3 = array4.GetLength(0);
+            //int cols3 = array4.GetLength(1);
+
+            //int[,] sudoku = new int[rows1, cols1 + cols2 + cols3];
+
+            //// array2 복사
+            //for (int i = 0; i < rows1; i++)
+            //{
+            //    for (int j = 0; j < cols1; j++)
+            //    {
+            //        sudoku[i, j] = array2[i, j];
+            //    }
+            //}
+
+            //// array3 복사
+            //for (int i = 0; i < rows2; i++)
+            //{
+            //    for (int j = 0; j < cols2; j++)
+            //    {
+            //        sudoku[i, j + cols1] = array3[i, j];
+            //    }
+            //}
+
+            //// array4 복사
+            //for (int i = 0; i < rows2; i++)
+            //{
+            //    for (int j = 0; j < cols2; j++)
+            //    {
+            //        sudoku[i, j + cols1 + cols2] = array4[i, j];
+            //    }
+            //}
+
+            //for (int i = 0; i < sudoku.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < sudoku.GetLength(1); j++)
+            //    {
+            //        Console.Write(sudoku[i, j] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //for (int i = 0; i < array2.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array2.GetLength(1); j++)
+            //    {
+            //        Console.Write(array2[i, j]);
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+            //for (int i = 0; i < array3.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array3.GetLength(1); j++)
+            //    {
+            //        Console.Write(array3[i, j]);
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+            //for (int i = 0; i < array4.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < array4.GetLength(1); j++)
+            //    {
+            //        Console.Write(array4[i, j]);
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
+
+            #endregion
+
+            #region 열 나누기 
+            //    int[,] array = {
+            //    { 1, 2, 3 },
+            //    { 4, 5, 6 },
+            //    { 7, 8, 9 }
+            //};
+
+            //    int columns = array.GetLength(1); // 배열의 열 수
+            //    int[,] separatedColumns = new int[columns, array.GetLength(0)]; // 분리된 열을 저장할 배열
+
+            //    // 열을 분리하여 저장
+            //    for (int col = 0; col < columns; col++)
+            //    {
+            //        for (int row = 0; row < array.GetLength(0); row++)
+            //        {
+            //            separatedColumns[col, row] = array[row, col];
+            //        }
+            //    }
+
+            //    // 분리된 열 출력
+            //    for (int col = 0; col < columns; col++)
+            //    {
+            //        Console.WriteLine($"Column {col + 1}:");
+            //        for (int row = 0; row < array.GetLength(0); row++)
+            //        {
+            //            Console.WriteLine(separatedColumns[col, row]);
+            //        }
+            //        Console.WriteLine();
+            //    }
+
+            #endregion
+
+            #region 피셔 에이츠 셔플 알고리즘으로 만든거 열 분리하기
+
+            Random random = new Random();
+            int[] array = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int[,] array2 = new int[3, 3];
+
+
+
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                int j = random.Next(0, i + 1);
+
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+
+
+            int a = 0;
+            for (int i = 0; i < array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < array2.GetLength(1); j++)
+                {
+                    array2[i, j] = array[a];
+                    a++;
+                }
+            }
+
+            for (int i = 0; i < array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < array2.GetLength(1); j++)
+                {
+                    Console.Write(array2[i,j]);
+                }
+                Console.WriteLine();
+            }
+
+
+            #region 열분리 해보기
+            int[,] row1 = new int[3, 1];
+            int[,] row2 = new int[3, 1];
+            int[,] row3 = new int[3, 1];
+
+            //row1 분리 
+            for(int i =0; i< row1.GetLength(0); i++) 
+            {
+                for(int j = 0; j< row2.GetLength(1); j++)
+                {
+                    row1[i, j] = array2[i, j];
+                }
+            }
+
+            //row2 분리 
+            for (int i = 0; i < row1.GetLength(0); i++)
+            {
+                for (int j = 0; j < row2.GetLength(1); j++)
+                {
+                    row2[i, j] = array2[i, j+1];
+                }
+            }
+
+            //row3 분리 
+            for (int i = 0; i < row1.GetLength(0); i++)
+            {
+                for (int j = 0; j < row2.GetLength(1); j++)
+                {
+                    row3[i, j] = array2[i, j+2];
+                }
+            }
+
+            for (int i = 0; i < row1.GetLength(0); i++)
+            {
+                for (int j = 0; j < row2.GetLength(1); j++)
+                {
+                    Console.WriteLine(row3[i,j]);
+                }
+            }
+            #endregion
+
+
+            #endregion
         }
     }
 }
