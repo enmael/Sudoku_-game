@@ -84,9 +84,9 @@ namespace Test2
             #region 1차원 배열로 분리 
             int[] note = new int[9];
             int noteCoute = 0;
-            for (int i = 0; i < array2.GetLength(0); i++)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < array2.GetLength(1); j++)
+                for (int j = 0; j < 3; j++)
                 {
                     note[noteCoute] = array2[i, j];
                     noteCoute++;
@@ -97,7 +97,7 @@ namespace Test2
             int[] arr2 = new int[3];
             int[] arr3 = new int[3];
 
-            for (int i = 0; i < note.Length; i++)
+            for (int i = 0; i < 9; i++)
             {
                 if (i < 3)
                 {
@@ -122,9 +122,9 @@ namespace Test2
 
 
             #region lineArray1
-            for (int i = 0; i < lineArray1.GetLength(0); i++)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < lineArray1.GetLength(1); j++)
+                for (int j = 0; j < 3; j++)
                 {
                     if (i == 0)
                     {

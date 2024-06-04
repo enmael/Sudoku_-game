@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Feti9A0oz4bz8rd2DZQ9cyNLxGn0CDrH/LsMatev1cEYY8RHceWjiLOhrtrR0WQK1XJn2ncHbHz/qjpnOh+9+A==",
+  "dgSpecHash": "q7j8nQgpuRSrJxPBYVx956rzFHjBkMicK6etxW046e3DSIRNGEnntLwO6MVbN6yXYsfN/4zHQSvyUQepAg2x7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Sudoku_-game\\Test\\Test.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\enmae\\OneDrive\\바탕 화면\\Sudoku_-game\\Test\\Test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\enmae\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\enmae\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\enmae\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\enmae\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
   "logs": []
 }
