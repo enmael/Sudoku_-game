@@ -104,13 +104,7 @@ namespace ConsoleApp1
                 }
             }
 
-            for (int i = 0; i < row1.GetLength(0); i++)
-            {
-                for (int j = 0; j < row2.GetLength(1); j++)
-                {
-                    Console.Write(row3[i, j]); 
-                }
-            }
+            
         }
 
         public int Row1(int x, int y)
@@ -527,14 +521,13 @@ namespace ConsoleApp1
 
         public int lineArray1(int x, int y)
         {
-            int note = iineArray1[x, y];
-            return note;
+            return iineArray1[x, y];
+            
         }
 
         public int lineArray2(int x, int y)
         {
-            int note = iineArray2[x, y];
-            return note;
+            return iineArray2[x, y];
         }
         public Define2()
         {
@@ -644,7 +637,7 @@ namespace ConsoleApp1
     }
     #endregion
     
-    #region 배열 합치기
+    #region 배열 합쳐서 3x9 스도쿠 만들기
      class Plus1
     {
         private int rows1 = 3;
@@ -657,6 +650,10 @@ namespace ConsoleApp1
         private RowShuffle rowShuffle; 
         private Define1 define1; 
 
+        public int Sudoku(int x, int y)
+        {
+            return sudoku1[x,y];
+        }
         public Plus1()
         {
             rowShuffle = new RowShuffle();
@@ -688,23 +685,190 @@ namespace ConsoleApp1
                     sudoku1[i, j + cols1 + cols2] = define1.lineArray2(i, j); ;
                 }
             }
-
         }
 
 
     }
 
-    
+    class Plus2
+    {
+        private int rows1 = 3;
+        private int cols1 = 3;
+        private int rows2 = 3;
+        private int cols2 = 3;
+        private int rows3 = 3;
+        private int cols3 = 3;
+
+        int[,] sudoku2 = new int[3, 9];
+        private RowShuffle rowShuffle;
+        private Define2 define2;
+
+        public int Sudoku(int x, int y)
+        {
+            return sudoku2[x, y];
+        }
+
+        public Plus2()
+        {
+            rowShuffle = new RowShuffle();
+            define2 = new Define2();
+
+            // rowArray1 복사
+            for (int i = 0; i < rows1; i++)
+            {
+                for (int j = 0; j < cols1; j++)
+                {
+                    sudoku2[i, j] = rowShuffle.RowArray1(i, j);
+                }
+            }
+
+            // lineArray1 복사
+            for (int i = 0; i < rows2; i++)
+            {
+                for (int j = 0; j < cols2; j++)
+                {
+                    sudoku2[i, j + cols1] = define2.lineArray1(i, j);
+                }
+            }
+
+            // array4 복사
+            for (int i = 0; i < rows2; i++)
+            {
+                for (int j = 0; j < cols2; j++)
+                {
+                    sudoku2[i, j + cols1 + cols2] = define2.lineArray2(i, j); ;
+                }
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    Console.Write(sudoku2[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+    class Plus3
+        {
+            private int rows1 = 3;
+            private int cols1 = 3;
+            private int rows2 = 3;
+            private int cols2 = 3;
+            private int rows3 = 3;
+            private int cols3 = 3;
+            int[,] sudoku3 = new int[3, 9];
+            private RowShuffle rowShuffle;
+            private Define3 define3;
+
+            public int Sudoku(int x, int y)
+            {
+                return sudoku3[x, y];
+            }
+
+        public Plus3()
+            {
+                rowShuffle = new RowShuffle();
+                define3 = new Define3();
+
+                // rowArray1 복사
+                for (int i = 0; i < rows1; i++)
+                {
+                    for (int j = 0; j < cols1; j++)
+                    {
+                        sudoku3[i, j] = rowShuffle.RowArray3(i, j);
+                    }
+                }
+
+                // lineArray1 복사
+                for (int i = 0; i < rows2; i++)
+                {
+                    for (int j = 0; j < cols2; j++)
+                    {
+                        sudoku3[i, j + cols1] = define3.lineArray1(i, j);
+                    }
+                }
+
+                // array4 복사
+                for (int i = 0; i < rows2; i++)
+                {
+                    for (int j = 0; j < cols2; j++)
+                    {
+                        sudoku3[i, j + cols1 + cols2] = define3.lineArray2(i, j); ;
+                    }
+                }
+            }
+        }
+
     #endregion
 
+    #region 3x9 스도쿠 합쳐서 9x9 만들기
+    
+    class NewSudoku
+    {
+        private int rows1 = 3;
+        private int cols1 = 9;
+        private int rows2 = 3;
+        private int cols2 = 9;
+        private int rows3 = 3;
+        private int cols3 = 9;
+        private int[,] newSudoku = new int[9, 9];
+
+        private Plus1 plus1;
+        private Plus2 plus2;
+        private Plus3 plus3;
+
+        public NewSudoku()
+        {
+            plus1 = new Plus1();
+            plus2 = new Plus2();
+            plus3 = new Plus3();
+
+            for (int i = 0; i < rows1; i++)
+            {
+                for (int j = 0; j < cols1; j++)
+                {
+                    newSudoku[i, j] = plus1.Sudoku(i, j);
+                }
+            }
+
+            for (int i = 0; i < rows2; i++)
+            {
+                for (int j = 0; j < cols2; j++)
+                {
+                    newSudoku[i + rows1, j] = plus2.Sudoku(i, j);
+                }
+            }
+
+            for (int i = 0; i < rows3; i++)
+            {
+                for (int j = 0; j < cols2; j++)
+                {
+                    newSudoku[i + rows1 + rows2, j] = plus3.Sudoku(i, j);
+                }
+            }
+
+            Console.WriteLine(" ");
+            for (int i = 0; i < newSudoku.GetLength(0); i++)
+            {
+                for (int j = 0; j < newSudoku.GetLength(1); j++)
+                {
+                    Console.Write(newSudoku[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
         {
             //Screen screen = new Screen();
             //Separation separation = new Separation();   
-            RowShuffle plus1 = new RowShuffle();
-
+            //NewSudoku newSudoku = new NewSudoku(); 
+            //Define1 cut1 = new Define1();
+        }
     }
- }
 }

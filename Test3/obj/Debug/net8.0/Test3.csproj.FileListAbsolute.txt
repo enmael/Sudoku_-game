@@ -1,0 +1,15 @@
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\bin\Debug\net8.0\Test3.exe
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\bin\Debug\net8.0\Test3.deps.json
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\bin\Debug\net8.0\Test3.runtimeconfig.json
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\bin\Debug\net8.0\Test3.dll
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\bin\Debug\net8.0\Test3.pdb
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\Test3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\Test3.AssemblyInfoInputs.cache
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\Test3.AssemblyInfo.cs
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\Test3.csproj.CoreCompileInputs.cache
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\Test3.sourcelink.json
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\Test3.dll
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\refint\Test3.dll
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\Test3.pdb
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\Test3.genruntimeconfig.cache
+C:\Users\enmae\OneDrive\바탕 화면\Sudoku_-game\Test3\obj\Debug\net8.0\ref\Test3.dll

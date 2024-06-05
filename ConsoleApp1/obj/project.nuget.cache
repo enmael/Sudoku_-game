@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d9JpJqPFTWvWSJcgI6mFmJTFa4y9yqMzLWRGa6eA5Pi9RvhKqOuPZ93eyuNjsNbnJQ7iqNQQxiaVuoqF9CPO+A==",
+  "dgSpecHash": "z5LEsgy9IDv+h3rBhGicfijgjOdgNnQZaabygEVmTIReCDEMBAzhX/QOOW5SwWYKzk7QOR5hZrFz/+unqGSN8Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\enmae\\OneDrive\\바탕 화면\\Sudoku_-game\\ConsoleApp1\\ConsoleApp1.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\enmae\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\enmae\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\enmae\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\enmae\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
