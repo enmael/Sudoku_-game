@@ -48,58 +48,6 @@
 
         #endregion
 
-        class Plus1
-        {
-            private int rows1 = 3;
-            private int cols1 = 3;
-            private int rows2 = 3;
-            private int cols2 = 3;
-            private int rows3 = 3;
-            private int cols3 = 3;
-            int[,] sudoku1 = new int[3, 9];
-            private RowShuffle rowShuffle;
-            private Define1 define1;
-
-            public int Sudoku(int x, int y)
-            {
-                return sudoku1[x, y];
-            }
-            public Plus1()
-            {
-                rowShuffle = new RowShuffle();
-                define1 = new Define1();
-
-                // rowArray1 복사
-                for (int i = 0; i < rows1; i++)
-                {
-                    for (int j = 0; j < cols1; j++)
-                    {
-                        sudoku1[i, j] = rowShuffle.RowArray1(i, j);
-                    }
-                }
-
-                // lineArray1 복사
-                for (int i = 0; i < rows2; i++)
-                {
-                    for (int j = 0; j < cols2; j++)
-                    {
-                        sudoku1[i, j + cols1] = define1.lineArray1(i, j);
-                    }
-                }
-
-                // array4 복사
-                for (int i = 0; i < rows2; i++)
-                {
-                    for (int j = 0; j < cols2; j++)
-                    {
-                        sudoku1[i, j + cols1 + cols2] = define1.lineArray2(i, j); ;
-                    }
-                }
-            }
-
-
-        }
-
         #region 분리 
         class Separation
         {
@@ -139,13 +87,7 @@
                     }
                 }
 
-                for (int i = 0; i < row1.GetLength(0); i++)
-                {
-                    for (int j = 0; j < row2.GetLength(1); j++)
-                    {
-                        Console.Write(row3[i, j]);
-                    }
-                }
+
             }
 
             public int Row1(int x, int y)
@@ -170,9 +112,10 @@
             }
         }
         #endregion
+
         static void Main(string[] args)
         {
-            Separation basic = new Separation();
+
         }
     }
 }
