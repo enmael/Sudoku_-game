@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
+using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
@@ -18,7 +20,7 @@ namespace ConsoleApp1
     }
     #endregion
 
-    #region 피셔 에이츠 셔플 알고리즘
+    #region  피셔 에이츠 셔플 알고리즘
         class Basic
         {
             private int[] array = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -451,21 +453,258 @@ namespace ConsoleApp1
     #region 1차원 배열로 다시 2차원 배열 만들기
     
 
+   public class DefineBasic
+    {
+        protected int[,] iineArray1 = new int[3, 3];
+        protected int[,] iineArray2 = new int[3, 3];
+    }
+
+    public class Define1 : DefineBasic
+    {
+        private Cut1 cut1;
+
+        public int lineArray1(int x, int y)
+        {
+            int note = iineArray1[x,y];
+            return note;
+        }
+
+        public int lineArray2(int x, int y)
+        {
+            int note = iineArray2[x, y];
+            return note;
+        }
+        public Define1()
+        {
+            cut1 = new Cut1();
+            
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (i == 0)
+                    {
+                        iineArray1[i, j] = cut1.Arr3(j);
+                    }
+                    else if (i == 1)
+                    {
+                        iineArray1[i, j] = cut1.Arr1(j);
+                    }
+                    else if (i == 2)
+                    {
+                        iineArray1[i, j] = cut1.Arr2(j);
+                    }
+
+                }
+            }
+
+           
+            for (int i = 0; i < iineArray2.GetLength(0); i++)
+            {
+                for (int j = 0; j < iineArray2.GetLength(1); j++)
+                {
+                    if (i == 0)
+                    {
+                        iineArray2[i, j] = cut1.Arr2(j);
+                    }
+                    else if (i == 1)
+                    {
+                        iineArray2[i, j] = cut1.Arr3(j);
+                    }
+                    else if (i == 2)
+                    {
+                        iineArray2[i, j] = cut1.Arr1(j);
+                    }
+
+                }
+            }
+        }
+    }
+
+    public class Define2 : DefineBasic
+    {
+        private Cut2 cut2;
+
+        public int lineArray1(int x, int y)
+        {
+            int note = iineArray1[x, y];
+            return note;
+        }
+
+        public int lineArray2(int x, int y)
+        {
+            int note = iineArray2[x, y];
+            return note;
+        }
+        public Define2()
+        {
+            cut2 = new Cut2();
+            
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (i == 0)
+                    {
+                        iineArray1[i, j] = cut2.Arr3(j);
+                    }
+                    else if (i == 1)
+                    {
+                        iineArray1[i, j] = cut2.Arr1(j);
+                    }
+                    else if (i == 2)
+                    {
+                        iineArray1[i, j] = cut2.Arr2(j);
+                    }
+
+                }
+            }
+
+            for (int i = 0; i < iineArray2.GetLength(0); i++)
+            {
+                for (int j = 0; j < iineArray2.GetLength(1); j++)
+                {
+                    if (i == 0)
+                    {
+                        iineArray2[i, j] = cut2.Arr2(j);
+                    }
+                    else if (i == 1)
+                    {
+                        iineArray2[i, j] = cut2.Arr3(j);
+                    }
+                    else if (i == 2)
+                    {
+                        iineArray2[i, j] = cut2.Arr1(j);
+                    }
+
+                }
+            }
+        }
+    }
+
+    public class Define3 : DefineBasic
+    {
+        private Cut3 cut3;
+
+        public int lineArray1(int x, int y)
+        {
+            int note = iineArray1[x, y];
+            return note;
+        }
+
+        public int lineArray2(int x, int y)
+        {
+            int note = iineArray2[x, y];
+            return note;
+        }
+        public Define3()
+        {
+            cut3 = new Cut3();
+          
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (i == 0)
+                    {
+                        iineArray1[i, j] = cut3.Arr3(j);
+                    }
+                    else if (i == 1)
+                    {
+                        iineArray1[i, j] = cut3.Arr1(j);
+                    }
+                    else if (i == 2)
+                    {
+                        iineArray1[i, j] = cut3.Arr2(j);
+                    }
+
+                }
+            }
+
+            for (int i = 0; i < iineArray2.GetLength(0); i++)
+            {
+                for (int j = 0; j < iineArray2.GetLength(1); j++)
+                {
+                    if (i == 0)
+                    {
+                        iineArray2[i, j] = cut3.Arr2(j);
+                    }
+                    else if (i == 1)
+                    {
+                        iineArray2[i, j] = cut3.Arr3(j);
+                    }
+                    else if (i == 2)
+                    {
+                        iineArray2[i, j] = cut3.Arr1(j);
+                    }
+
+                }
+            }
+        }
+    }
+    #endregion
+    
+    #region 배열 합치기
+     class Plus1
+    {
+        private int rows1 = 3;
+        private int cols1 = 3;
+        private int rows2 = 3;
+        private int cols2 = 3;
+        private int rows3 = 3;
+        private int cols3 = 3;
+        int[,] sudoku1 = new int[3, 9];
+        private RowShuffle rowShuffle; 
+        private Define1 define1; 
+
+        public Plus1()
+        {
+            rowShuffle = new RowShuffle();
+            define1 = new Define1();
+
+            // rowArray1 복사
+            for (int i = 0; i < rows1; i++)
+            {
+                for (int j = 0; j < cols1; j++)
+                {
+                    sudoku1[i, j] = rowShuffle.RowArray1(i, j);
+                }
+            }
+
+            // lineArray1 복사
+            for (int i = 0; i < rows2; i++)
+            {
+                for (int j = 0; j < cols2; j++)
+                {
+                    sudoku1[i, j + cols1] = define1.lineArray1(i, j);
+                }
+            }
+
+            // array4 복사
+            for (int i = 0; i < rows2; i++)
+            {
+                for (int j = 0; j < cols2; j++)
+                {
+                    sudoku1[i, j + cols1 + cols2] = define1.lineArray2(i, j); ;
+                }
+            }
+
+        }
 
 
+    }
+
+    
     #endregion
 
-
-
     internal class Program
- {
-    static void Main(string[] args)
     {
-     //Screen screen = new Screen();
-      //Separation separation = new Separation();   
-
+        static void Main(string[] args)
+        {
+            //Screen screen = new Screen();
+            //Separation separation = new Separation();   
+            RowShuffle plus1 = new RowShuffle();
 
     }
  }
 }
-
