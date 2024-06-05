@@ -866,7 +866,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             //Screen screen = new Screen();
-            //Separation separation = new Separation();   
+            Separation separation = new Separation();   
             //NewSudoku newSudoku = new NewSudoku(); 
             //Define1 cut1 = new Define1();
         }
