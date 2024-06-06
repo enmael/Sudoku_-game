@@ -70,11 +70,18 @@
 
     internal class Program
     {
+        static void UpdateTimer(object state)
+        {
+            Console.Clear(); // 콘솔 창을 지웁니다.
+            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss")); // 현재 시간을 표시합니다.
+        }
 
         static void Main(string[] args)
         {
             #region 꾸미기
             Screen screen = new Screen();
+            int seconds = 0;
+
             #endregion
 
             #region 정리
