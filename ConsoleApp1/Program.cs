@@ -56,9 +56,9 @@ namespace ConsoleApp1
             {
                 int note = array2[x, y];
                 return note;
-
-                
             }
+
+
 
         }
 
@@ -865,10 +865,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Screen screen = new Screen();
-            Separation separation = new Separation();   
-            //NewSudoku newSudoku = new NewSudoku(); 
-            //Define1 cut1 = new Define1();
+           
         }
     }
 }

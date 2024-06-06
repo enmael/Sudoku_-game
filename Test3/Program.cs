@@ -12,24 +12,16 @@
             Console.SetWindowSize(width, height);
         }
     }
-    internal class Program
+
+    #region  피셔 에이츠 셔플 알고리즘
+    class Basic
     {
+        private int[] array = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        private int[,] array2 = new int[3, 3];
 
-        static void Main(string[] args)
+        public Basic()
         {
-            #region 꾸미기
-            Screen screen = new Screen();
-            #endregion
-
-            #region 정리
-
-
-            #region 피셔 에이츠 알고리즘
             Random random = new Random();
-            int[] array = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int[,] array2 = new int[3, 3];
-
-
 
             for (int i = array.Length - 1; i > 0; i--)
             {
@@ -50,6 +42,46 @@
                     a++;
                 }
             }
+
+        }
+
+        public int Array2(int x, int y)
+        {
+            int note = array2[x, y];
+            return note;
+        }
+
+        public int rows()
+        {
+            int note = array2.GetLength(0);
+            return note;
+        }
+
+        public int cols()
+        {
+            int note = array2.GetLength(1);
+            return note;
+        }
+
+    }
+
+
+    #endregion
+
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+            #region 꾸미기
+            Screen screen = new Screen();
+            #endregion
+
+            #region 정리
+
+
+            #region 피셔 에이츠 알고리즘
+            Basic basic = new Basic(); 
             #endregion
 
             #region 열분리 해보기
@@ -62,7 +94,7 @@
             {
                 for (int j = 0; j < row2.GetLength(1); j++)
                 {
-                    row1[i, j] = array2[i, j];
+                    row1[i, j] = basic.Array2(i, j);
                 }
             }
 
@@ -71,7 +103,7 @@
             {
                 for (int j = 0; j < row2.GetLength(1); j++)
                 {
-                    row2[i, j] = array2[i, j + 1];
+                    row2[i, j] = basic.Array2(i, j + 1);
                 }
             }
 
@@ -80,7 +112,7 @@
             {
                 for (int j = 0; j < row2.GetLength(1); j++)
                 {
-                    row3[i, j] = array2[i, j + 2];
+                    row3[i, j] = basic.Array2(i, j + 2);
                 }
             }
 
@@ -99,7 +131,7 @@
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    note[noteCoute] = array2[i, j];
+                    note[noteCoute] = basic.Array2(i, j);
                     noteCoute++;
                 }
             }
@@ -179,8 +211,8 @@
             #endregion
 
             #region 합치기
-            int rows1 = array2.GetLength(0);
-            int cols1 = array2.GetLength(1);
+            int rows1 = basic.rows();
+            int cols1 = basic.cols();
             int rows2 = lineArray1.GetLength(0);
             int cols2 = lineArray1.GetLength(1);
             int rows3 = lineArray2.GetLength(0);
@@ -194,7 +226,7 @@
             {
                 for (int j = 0; j < cols1; j++)
                 {
-                    sudoku1[i, j] = array2[i, j];
+                    sudoku1[i, j] = basic.Array2(i, j);
                 }
             }
 
@@ -653,6 +685,7 @@
             //랜덤 좌표를 빈공간으로 만들기
             int number1 = 0;
             int number2 = 0;
+            Random random = new Random();
             for (int i  =0; i<15; i++)
             {
                 number1 = random.Next(0, 9);
@@ -693,205 +726,223 @@
             int y = 11;
             ConsoleKeyInfo key;
             int answer = 0;
+            int start = 0;
             //
             while (true)
             {
-
-               if(Zero != 0)
+               if(start < 10)
                 {
-                //맵
-                for(int i=0; i<num.Length; i++)
-                {
-                    Console.Write(num[i]);
+                    Console.SetCursorPosition(5, 3);
+                    Console.WriteLine("SUDOKU");
+                    Console.WriteLine(" ");
+                    Console.SetCursorPosition(5, 5);
+                    Console.WriteLine("Game");
+                    Console.SetCursorPosition(5, 6);
+                    Console.WriteLine("Starting");
+                    start++;
                 }
-                Console.WriteLine(" ");
-                Console.WriteLine("①②③④⑤⑥⑦⑧⑨");
-                Console.WriteLine("빈공간 : "+ Zero);
-                //Console.WriteLine("x: " + x + "배열 x: " + (x/2));
-                //Console.WriteLine("y: " + y+ "배열 y: " + (y-3));
-                Console.WriteLine(" ");
-                
-                for (int i = 0; i < copySudoku.GetLength(1); i++)
+               else
                 {
-                    for (int j = 0; j < copySudoku.GetLength(0); j++)
+                   if(Zero != 0)
                     {
-                        if (copySudoku[i, j] == 0)
+                    //맵
+                    for(int i=0; i<num.Length; i++)
+                    {
+                        Console.Write(num[i]);
+                    }
+                    Console.WriteLine(" ");
+                    Console.WriteLine("①②③④⑤⑥⑦⑧⑨");
+                    Console.WriteLine("빈공간 : "+ Zero);
+                    //Console.WriteLine("x: " + x + "배열 x: " + (x/2));
+                    //Console.WriteLine("y: " + y+ "배열 y: " + (y-3));
+                    Console.WriteLine(" ");
+                
+                    for (int i = 0; i < copySudoku.GetLength(1); i++)
+                    {
+                        for (int j = 0; j < copySudoku.GetLength(0); j++)
                         {
-                            Console.Write("□");
-                        }
-                        else if(copySudoku[i, j] == 1)
-                        {
-                            Console.Write("①");
-                        }
-                        else if (copySudoku[i, j] == 2)
-                        {
-                            Console.Write("②");
-                        }
-                        else if (copySudoku[i, j] == 2)
-                        {
-                            Console.Write("②");
-                        }
-                        else if (copySudoku[i, j] == 3)
-                        {
-                            Console.Write("③");
-                        }
-                        else if (copySudoku[i, j] == 4)
-                        {
-                            Console.Write("④");
-                        }
-                        else if (copySudoku[i, j] == 5)
-                        {
-                            Console.Write("⑤");
-                        }
-                        else if (copySudoku[i, j] == 6)
-                        {
-                            Console.Write("⑥");
-                        }
-                        else if (copySudoku[i, j] == 7)
-                        {
-                            Console.Write("⑦");
-                        }
-                        else if (copySudoku[i, j] == 8)
-                        {
-                            Console.Write("⑧");
-                        }
-                        else if (copySudoku[i, j] == 9)
-                        {
-                            Console.Write("⑨");
-                        }
-                    else
-                        {
-                            Console.Write(copySudoku[i, j] + " ");
-                        }
+                            if (copySudoku[i, j] == 0)
+                            {
+                                Console.Write("□");
+                            }
+                            else if(copySudoku[i, j] == 1)
+                            {
+                                Console.Write("①");
+                            }
+                            else if (copySudoku[i, j] == 2)
+                            {
+                                Console.Write("②");
+                            }
+                            else if (copySudoku[i, j] == 2)
+                            {
+                                Console.Write("②");
+                            }
+                            else if (copySudoku[i, j] == 3)
+                            {
+                                Console.Write("③");
+                            }
+                            else if (copySudoku[i, j] == 4)
+                            {
+                                Console.Write("④");
+                            }
+                            else if (copySudoku[i, j] == 5)
+                            {
+                                Console.Write("⑤");
+                            }
+                            else if (copySudoku[i, j] == 6)
+                            {
+                                Console.Write("⑥");
+                            }
+                            else if (copySudoku[i, j] == 7)
+                            {
+                                Console.Write("⑦");
+                            }
+                            else if (copySudoku[i, j] == 8)
+                            {
+                                Console.Write("⑧");
+                            }
+                            else if (copySudoku[i, j] == 9)
+                            {
+                                Console.Write("⑨");
+                            }
+                        else
+                            {
+                                Console.Write(copySudoku[i, j] + " ");
+                            }
                         
+                        }
+
+                        Console.WriteLine();
                     }
 
-                    Console.WriteLine();
-                }
-                    #region 키보드 이동
-                    Console.SetCursorPosition(x, y);
-                    Console.WriteLine("▲");
-                    key = Console.ReadKey();
-                    switch (key.Key)
-                    {
-                    case ConsoleKey.UpArrow:
-                        if(y>4)
+                        #region 키보드 이동
+                        Console.SetCursorPosition(x, y);
+                        Console.WriteLine("▲");
+                        key = Console.ReadKey();
+                        switch (key.Key)
                         {
-                        y--;
-                        }
-                        break;
-                    case ConsoleKey.DownArrow:
-                        if(y <=11)
-                        {
-                        y++;
-                        }
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        if(x>0)
-                        {
-                        x = x-2;
-                        }
-                        break;
-                    case ConsoleKey.RightArrow:
-                        if(x <=15)
-                        {
-                        x = x+2;
-                        }
-                        break;    
-                    case ConsoleKey.Q:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {
-                            copySudoku[y - 4, x / 2] = 1;
-                            Zero--;
-                        }
-                        break;
-                    case ConsoleKey.W:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {
-                            copySudoku[y - 4, x / 2] = 2;
-                            Zero--;
-                        }
-                        break;
-                    case ConsoleKey.E:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {
-                            copySudoku[y - 4, x / 2] = 3;
-                            Zero--;
-                        }
-                        break;
-                    case ConsoleKey.A:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {
-                            copySudoku[y - 4, x / 2] = 4;
-                            Zero--;
-                        }
-                        break;
-                    case ConsoleKey.S:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {
-                            copySudoku[y - 4, x / 2] = 5;
-                            Zero--;
-                        }
-                        break;
-                    case ConsoleKey.D:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {
-                            copySudoku[y - 4, x / 2] = 6;
-                            Zero--;
-                        }
-                        break;
-                    case ConsoleKey.Z:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {
-                            copySudoku[y - 4, x / 2] = 7;
-                            Zero--;
-                        }
-                        break;
-                    case ConsoleKey.X:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {   
-                            copySudoku[y - 4, x / 2] = 8;
-                            Zero--;
-                        }
-                        break;
-                    case ConsoleKey.C:
-                        if (copySudoku[y - 4, x / 2] == 0)
-                        {
-                            copySudoku[y - 4, x / 2] = 9;
-                            Zero--;
-                        }
-                        break;
-                }
-                }
-               else if(Zero == 0)
-                {
-                    
-                    int sudokuAnswer = Zero2;
-                    for (int i = 0; i < copySudoku.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < copySudoku.GetLength(1); j++)
-                        {
-                            if (newSudoku[i, j] != copySudoku[i,j])
+                        case ConsoleKey.UpArrow:
+                            if(y>4)
                             {
-                                sudokuAnswer--;
+                            y--;
+                            }
+                            break;
+                        case ConsoleKey.DownArrow:
+                            if(y <=11)
+                            {
+                            y++;
+                            }
+                            break;
+                        case ConsoleKey.LeftArrow:
+                            if(x>0)
+                            {
+                            x = x-2;
+                            }
+                            break;
+                        case ConsoleKey.RightArrow:
+                            if(x <=15)
+                            {
+                            x = x+2;
+                            }
+                            break;    
+                        case ConsoleKey.Q:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {
+                                copySudoku[y - 4, x / 2] = 1;
+                                Zero--;
+                            }
+                            break;
+                        case ConsoleKey.W:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {
+                                copySudoku[y - 4, x / 2] = 2;
+                                Zero--;
+                            }
+                            break;
+                        case ConsoleKey.E:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {
+                                copySudoku[y - 4, x / 2] = 3;
+                                Zero--;
+                            }
+                            break;
+                        case ConsoleKey.A:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {
+                                copySudoku[y - 4, x / 2] = 4;
+                                Zero--;
+                            }
+                            break;
+                        case ConsoleKey.S:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {
+                                copySudoku[y - 4, x / 2] = 5;
+                                Zero--;
+                            }
+                            break;
+                        case ConsoleKey.D:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {
+                                copySudoku[y - 4, x / 2] = 6;
+                                Zero--;
+                            }
+                            break;
+                        case ConsoleKey.Z:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {
+                                copySudoku[y - 4, x / 2] = 7;
+                                Zero--;
+                            }
+                            break;
+                        case ConsoleKey.X:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {   
+                                copySudoku[y - 4, x / 2] = 8;
+                                Zero--;
+                            }
+                            break;
+                        case ConsoleKey.C:
+                            if (copySudoku[y - 4, x / 2] == 0)
+                            {
+                                copySudoku[y - 4, x / 2] = 9;
+                                Zero--;
+                            }
+                            break;
+                    }
+                    }
+                   else if(Zero == 0)
+                    {
+                    
+                        int sudokuAnswer = Zero2;
+                        for (int i = 0; i < copySudoku.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < copySudoku.GetLength(1); j++)
+                            {
+                                if (newSudoku[i, j] != copySudoku[i,j])
+                                {
+                                    sudokuAnswer--;
+                                }
                             }
                         }
-                    }
-
-                    if(sudokuAnswer == 0)
-                    {
-                        Console.WriteLine("전부 틀림");
-                    }
-                    else if (sudokuAnswer == Zero2)
-                    {
-                        Console.WriteLine("만점");
-                    }
-                    else if(sudokuAnswer > 0)
-                    {
-                        Console.WriteLine(sudokuAnswer+" 개  맞추셨습니다. ");
+                        Console.SetCursorPosition(5, 3);
+                        if (sudokuAnswer == 0)
+                        {
+                            Console.WriteLine("Game Over");
+                            
+                        }
+                        else if (sudokuAnswer == Zero2)
+                        {
+                            Console.WriteLine("All Clear!!!");
+                            
+                        }
+                        else if(sudokuAnswer > 0)
+                        {
+                            Console.WriteLine(sudokuAnswer+"개");
+                            Console.WriteLine(" 맞추셨습니다.");
+                            
+                        }
                     }
                 }
- 
                 #region 화면 초기화
                 Thread.Sleep(100);
                 Console.Clear();

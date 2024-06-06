@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\Sudoku_-game\\Test3\\Test3.csproj": {}
+    "C:\\Users\\enmae\\OneDrive\\바탕 화면\\Sudoku_-game\\Test3\\Test3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\Sudoku_-game\\Test3\\Test3.csproj": {
+    "C:\\Users\\enmae\\OneDrive\\바탕 화면\\Sudoku_-game\\Test3\\Test3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Sudoku_-game\\Test3\\Test3.csproj",
+        "projectUniqueName": "C:\\Users\\enmae\\OneDrive\\바탕 화면\\Sudoku_-game\\Test3\\Test3.csproj",
         "projectName": "Test3",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Sudoku_-game\\Test3\\Test3.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Sudoku_-game\\Test3\\obj\\",
+        "projectPath": "C:\\Users\\enmae\\OneDrive\\바탕 화면\\Sudoku_-game\\Test3\\Test3.csproj",
+        "packagesPath": "C:\\Users\\enmae\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\enmae\\OneDrive\\바탕 화면\\Sudoku_-game\\Test3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\enmae\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -55,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
