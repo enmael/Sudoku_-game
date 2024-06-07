@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\bin\Debug\net6.0\Test5.exe
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\bin\Debug\net6.0\Test5.deps.json
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\bin\Debug\net6.0\Test5.runtimeconfig.json
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\bin\Debug\net6.0\Test5.dll
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\bin\Debug\net6.0\Test5.pdb
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\Test5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\Test5.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\Test5.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\Test5.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\Test5.sourcelink.json
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\Test5.dll
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\refint\Test5.dll
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\Test5.pdb
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\Test5.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\Sudoku_-game\Test5\obj\Debug\net6.0\ref\Test5.dll

@@ -1,6 +1,8 @@
 ﻿namespace Test3
 {
-    class Screen //스크린의 크기를 제한한다.
+    
+    #region  화면 
+    class Screen
     {
         private readonly int width;
         private readonly int height;
@@ -12,6 +14,7 @@
             Console.SetWindowSize(width, height);
         }
     }
+    #endregion
 
     #region  피셔 에이츠 셔플 알고리즘
     class Basic
@@ -70,10 +73,11 @@
 
     internal class Program
     {
-        static void UpdateTimer(object state)
+        static void TimerCallback(object state)
         {
-            Console.Clear(); // 콘솔 창을 지웁니다.
-            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss")); // 현재 시간을 표시합니다.
+            Console.Clear();
+            // 현재 시간을 콘솔에 출력
+            Console.WriteLine("Current time: " + DateTime.Now.ToString("HH:mm:ss"));
         }
 
         static void Main(string[] args)
@@ -734,11 +738,13 @@
             ConsoleKeyInfo key;
             int answer = 0;
             int start = 0;
+            int memo = 0; //임시적으로 숫자를 저장
             //
             while (true)
             {
-               if(start < 10)
+               if(start < 20)
                 {
+                    //시작화면
                     Console.SetCursorPosition(5, 3);
                     Console.WriteLine("SUDOKU");
                     Console.WriteLine(" ");
@@ -753,19 +759,20 @@
                    if(Zero != 0)
                     {
                     //맵
-                    for(int i=0; i<num.Length; i++)
-                    {
+                        for(int i=0; i<num.Length; i++)
+                        {
                         Console.Write(num[i]);
-                    }
-                    Console.WriteLine(" ");
-                    Console.WriteLine("①②③④⑤⑥⑦⑧⑨");
-                    Console.WriteLine("빈공간 : "+ Zero);
-                    //Console.WriteLine("x: " + x + "배열 x: " + (x/2));
-                    //Console.WriteLine("y: " + y+ "배열 y: " + (y-3));
-                    Console.WriteLine(" ");
-                
-                    for (int i = 0; i < copySudoku.GetLength(1); i++)
-                    {
+                        }
+                        Console.WriteLine(" ");
+                        Console.WriteLine("①②③④⑤⑥⑦⑧⑨");
+
+                        //Console.WriteLine("x: " + x + "배열 x: " + (x/2));
+                        //Console.WriteLine("y: " + y+ "배열 y: " + (y-3));
+                        Console.WriteLine("빈공간 : " + Zero);
+                        Console.WriteLine("memo:" + memo);
+                        Console.WriteLine(" ");
+                        for (int i = 0; i < copySudoku.GetLength(1); i++)
+                        {
                         for (int j = 0; j < copySudoku.GetLength(0); j++)
                         {
                             if (copySudoku[i, j] == 0)
@@ -829,13 +836,13 @@
                         switch (key.Key)
                         {
                         case ConsoleKey.UpArrow:
-                            if(y>4)
+                            if(y>5)
                             {
                             y--;
                             }
                             break;
                         case ConsoleKey.DownArrow:
-                            if(y <=11)
+                            if(y <=12)
                             {
                             y++;
                             }
@@ -853,69 +860,89 @@
                             }
                             break;    
                         case ConsoleKey.Q:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {
-                                copySudoku[y - 4, x / 2] = 1;
-                                Zero--;
+                                //copySudoku[y - 4, x / 2] = 1;
+                                memo = 1;
+                                //Zero--;
                             }
                             break;
                         case ConsoleKey.W:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {
-                                copySudoku[y - 4, x / 2] = 2;
-                                Zero--;
+                                //copySudoku[y - 4, x / 2] = 2;
+                                  memo = 2;
+                                  //Zero--;
                             }
                             break;
                         case ConsoleKey.E:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {
-                                copySudoku[y - 4, x / 2] = 3;
-                                Zero--;
+                                //copySudoku[y - 4, x / 2] = 3;
+                                memo = 3;
+                                //Zero--;
                             }
                             break;
                         case ConsoleKey.A:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {
-                                copySudoku[y - 4, x / 2] = 4;
-                                Zero--;
+                                //copySudoku[y - 4, x / 2] = 4;
+                                memo = 4;
+                                //Zero--;
                             }
                             break;
                         case ConsoleKey.S:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {
-                                copySudoku[y - 4, x / 2] = 5;
-                                Zero--;
+                                 //copySudoku[y - 4, x / 2] = 5;
+                                 memo = 5;
+                                 //Zero--;
                             }
                             break;
                         case ConsoleKey.D:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {
-                                copySudoku[y - 4, x / 2] = 6;
-                                Zero--;
+                                //copySudoku[y - 4, x / 2] = 6;
+                                memo = 6;
+                                //Zero--;
                             }
                             break;
                         case ConsoleKey.Z:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {
-                                copySudoku[y - 4, x / 2] = 7;
-                                Zero--;
+                                //copySudoku[y - 4, x / 2] = 7;
+                                    memo = 7;
+                                    //Zero--;
                             }
                             break;
                         case ConsoleKey.X:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {   
-                                copySudoku[y - 4, x / 2] = 8;
-                                Zero--;
+                                //copySudoku[y - 4, x / 2] = 8;
+                                    memo = 8;
+                                    //Zero--;
                             }
                             break;
                         case ConsoleKey.C:
-                            if (copySudoku[y - 4, x / 2] == 0)
+                            if (copySudoku[y - 5, x / 2] == 0)
                             {
-                                copySudoku[y - 4, x / 2] = 9;
-                                Zero--;
+                                //copySudoku[y - 4, x / 2] = 9;
+                                    memo = 9;
+                                    //Zero--;
                             }
                             break;
-                    }
+                            case ConsoleKey.Enter:
+                                if(memo != 0)
+                                {
+                                    if (copySudoku[y - 5, x / 2] == 0)
+                                    {
+                                        copySudoku[y - 5, x / 2] = memo;
+                                        Zero--;
+                                        memo = 0;
+                                    }
+                                }
+                                break;
+                        }
                     }
                    else if(Zero == 0)
                     {
